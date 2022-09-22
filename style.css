@@ -1,0 +1,43 @@
+table,
+tr,
+td {
+  border: solid 1px gray;
+  border-collapse: collapse;
+  text-align: center;
+}
+table {
+  margin: auto;
+}
+td,
+th {
+  width: 80px;
+  height: 40px;
+}
+th {
+  background: silver;
+}
+.today {
+  background: #f4d7f4;
+}
+.preday {
+  background: lightgray;
+}
+.Sat {
+  /* background: lightblue; */
+  color: blue;
+}
+.Sun {
+  /* background: rgb(255, 161, 161); */
+  color: red;
+}
+p {
+  font-weight: 700;
+  font-size: x-large;
+  text-align: center;
+}
+.batu {
+  background: lightgray;
+}
+body {
+  font-family: "arial black", "Haettenschweiler", "Impact", sans-serif;
+}
