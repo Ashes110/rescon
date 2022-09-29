@@ -11,15 +11,15 @@ $mysqli = new mysqli($host, $user, $pass, $dbname);
 if (isset($_POST["reserve"])) {
     $YMD = $_POST["date"];
     $HMS = $_POST["time"];
-    $sql = "SELECT yn FROM checktable WHERE ymd='" . $YMD . "' AND hms='" . $HMS . "'";
+    $sql = "SELECT yn FROM table_name WHERE ymd='" . $YMD . "' AND hms='" . $HMS . "'";
     $yn = mysqli_query($mysqli, $sql);
     $res = mysqli_fetch_assoc($yn);
     if ($res["yn"] == null) {
-        $osql = "INSERT INTO checktable (ymd, hms, yn) VALUES('" . $YMD . "', '" . $HMS . "', 1)";
+        $osql = "INSERT INTO table_name (ymd, hms, yn) VALUES('" . $YMD . "', '" . $HMS . "', 1)";
     } elseif ($res["yn"] == 1) {
-        $osql = "UPDATE checktable SET yn=0 WHERE ymd='" . $YMD . "' AND hms='" . $HMS . "'";
+        $osql = "UPDATE table_name SET yn=0 WHERE ymd='" . $YMD . "' AND hms='" . $HMS . "'";
     } elseif ($res["yn"] == 0) {
-        $osql = "UPDATE checktable SET yn=1 WHERE ymd='" . $YMD . "' AND hms='" . $HMS . "'";
+        $osql = "UPDATE table_name SET yn=1 WHERE ymd='" . $YMD . "' AND hms='" . $HMS . "'";
     }
     $res = mysqli_query($mysqli, $osql);
 }
@@ -134,7 +134,7 @@ for ($i = 0; $i < 21; $i++) {
         $m = substr($ymd, 4, 2);
         $d = substr($ymd, 6, 2);
         $ymd = $y . '-' . $m . '-' . $d;
-        $sql = "SELECT yn FROM checktable WHERE ymd='" . $ymd . "' AND hms='" . date('H:i', $time) . "'";
+        $sql = "SELECT yn FROM table_name WHERE ymd='" . $ymd . "' AND hms='" . date('H:i', $time) . "'";
         $yn = mysqli_query($mysqli, $sql);
         $reserve = "×";
         $res = mysqli_fetch_assoc($yn);

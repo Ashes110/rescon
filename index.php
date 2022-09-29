@@ -147,11 +147,11 @@ $mysqli->close();
 
 <body>
     <h1 align="center">
-        <font size="5" color="gray">まつ毛カール　Le ciel</font>
+        <font size="5" color="gray"></font>
     </h1>
-    <p>「〇」の時間帯は予約が可能です</p>
+    <p></p>
     <p>
-        <font size="2">このページは予約可能時間の確認のみの為、<br>予約はLINE公式またはメールにてお願い致します。</font>
+        <font size="2"></font>
     </p>
     <table class="cal">
         <tr>
